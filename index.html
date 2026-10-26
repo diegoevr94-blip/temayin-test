@@ -14,21 +14,18 @@
   <h1>Prueba del chatbot Temayín</h1>
   <p class="nota">Página solo para pruebas. Abre el globo de chat en la esquina inferior derecha y escribe <b>hola</b>.</p>
 
-  <!--
-    PEGA AQUÍ ABAJO el fragmento de código que te da Amazon Connect
-    (Channels → Communication widgets → tu widget → código).
-    Debe empezar con <script type="text/javascript"> (function(w, d, x, id){ ...
-  -->
-
-  <!-- ===== INICIO DEL CÓDIGO DEL WIDGET ===== -->
-
-  <!-- ===== FIN DEL CÓDIGO DEL WIDGET ===== -->
-
-  <!--
-    Después de pegar el código, agrega ANTES del </script> final esta línea
-    para que el chat acepte botones (mensajes interactivos):
-
-    amazon_connect('supportedMessagingContentTypes', ['text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response']);
-  -->
+ <script type="text/javascript">
+  (function(w, d, x, id){
+    s=d.createElement('script');
+    s.src='https://tren-maya.my.connect.aws/connectwidget/static/amazon-connect-chat-interface-client.js';
+    s.async=1;
+    s.id=id;
+    d.getElementsByTagName('head')[0].appendChild(s);
+    w[x] =  w[x] || function() { (w[x].ac = w[x].ac || []).push(arguments) };
+  })(window, document, 'amazon_connect', '2f4f069b-28ea-45e0-9187-6c7cc21f529f');
+  amazon_connect('styles', { iconType: 'CHAT', openChat: { color: '#ffffff', backgroundColor: '#008080' }, closeChat: { color: '#ffffff', backgroundColor: '#008080'} });
+  amazon_connect('snippetId', 'QVFJREFIZ1NqZWV5MTExbXUwZXRHZUlvQ2NPT3RQZ1k4bTl0VDhTaTZYcy9YcFVCVHdFZy9pQS9hekJSTnQ2YUNPL2N1YWIwQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNNEdiZmRiKzZ2bElmS3llY0FnRVFnQ3VVcklvK1pCWTdYSHhiVmF0RnZkcGNLWGMweWxjVHZyS0Z5c2hPeWFtTWdGNDJSZU5CRDdqdDlwYks6OlZwZkZHOUEvZm5VTmlmWEFOTTFKUWo0bkVURkpDNldoS3BRSnZmYlZlY1FTOUZXYjZ6ZVZSUzFWeFhsNThXc0xnYWVCbHNQNUdBSXRGdWZBWmJwWVAvdExTQTE0ZW9sV0FwUktRZTVmd3pkV2lHRjJtODFqTWo3a0g2T3BwNU9CcHRMd2dZbUpZNHN0ZGt5YXhrd09HNXpSL1ZkbHFSRT0=');
+  amazon_connect('supportedMessagingContentTypes', [ 'text/plain', 'text/markdown', 'application/vnd.amazonaws.connect.message.interactive', 'application/vnd.amazonaws.connect.message.interactive.response' ]);
+</script>
 </body>
 </html>
